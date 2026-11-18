@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Interview | AI Interviewer</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="interview-container">
+
+
+    <!-- ================================= -->
+    <!-- HEADER -->
+    <!-- ================================= -->
+
+    <header class="interview-header">
+
+        <div class="brand">
+            🤖 AI INTERVIEWER
+        </div>
+
+        <div class="live-status">
+            <span class="status-dot"></span>
+            LIVE INTERVIEW
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================= -->
+    <!-- WELCOME SECTION -->
+    <!-- ================================= -->
+
+    <section class="interview-welcome">
+
+        <h1 id="welcomeMessage">
+            Hello Candidate!
+        </h1>
+
+        <p>
+            Answer each question clearly and confidently.
+            Your response will be evaluated using AI.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- INTERVIEW AREA -->
+    <!-- ================================= -->
+
+    <main class="interview-layout">
+
+
+        <!-- ================================= -->
+        <!-- QUESTION PANEL -->
+        <!-- ================================= -->
+
+        <section class="question-panel">
+
+            <div class="question-label">
+                INTERVIEW QUESTION
+            </div>
+
+
+            <div class="question-number">
+                Question 1 of 5
+            </div>
+
+
+            <h2 id="questionBox">
+                Tell me about yourself.
+            </h2>
+
+
+            <div class="question-tip">
+
+                <span class="tip-icon">
+                    💡
+                </span>
+
+                <span>
+                    Take a moment to think before answering.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- RECORDING PANEL -->
+        <!-- ================================= -->
+
+        <section class="recording-panel">
+
+
+            <!-- AI AVATAR -->
+
+            <div class="ai-avatar">
+
+                <div class="avatar-face">
+                    🤖
+                </div>
+
+            </div>
+
+
+            <h2>
+                AI Interviewer
+            </h2>
+
+
+            <p class="recording-description">
+                Record your answer using your microphone.
+            </p>
+
+
+
+            <!-- ================================= -->
+            <!-- RECORDING STATUS -->
+            <!-- ================================= -->
+
+            <div
+                id="recordingStatus"
+                class="recording-status">
+
+                Click the button to start recording.
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- RECORD BUTTON -->
+            <!-- ================================= -->
+
+            <button
+                id="recordButton"
+                class="record-button"
+                type="button"
+                onclick="startRecording()">
+
+                🎙️ Start Recording
+
+            </button>
+
+
+
+            <!-- ================================= -->
+            <!-- NEXT BUTTON -->
+            <!-- ================================= -->
+
+            <button
+                id="nextButton"
+                class="next-button"
+                type="button"
+                onclick="nextQuestion()">
+
+                Next Question →
+
+            </button>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- AI FEATURES -->
+    <!-- ================================= -->
+
+    <section class="analysis-bar">
+
+
+        <!-- SPEECH -->
+
+        <div class="analysis-item">
+
+            <span class="analysis-icon">
+                🎙️
+            </span>
+
+            <div>
+
+                <strong>
+                    Speech Analysis
+                </strong>
+
+                <small>
+                    Speaking speed & filler words
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NLP -->
+
+        <div class="analysis-item">
+
+            <span class="analysis-icon">
+                🧠
+            </span>
+
+            <div>
+
+                <strong>
+                    NLP Evaluation
+                </strong>
+
+                <small>
+                    Relevance & keyword analysis
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEEDBACK -->
+
+        <div class="analysis-item">
+
+            <span class="analysis-icon">
+                ✨
+            </span>
+
+            <div>
+
+                <strong>
+                    Smart Feedback
+                </strong>
+
+                <small>
+                    AI performance insights
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<!-- ================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

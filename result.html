@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Results | AI Interviewer</title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="result-container">
+
+
+    <!-- HEADER -->
+
+    <div class="result-header">
+
+        <div class="brand">
+            🤖 AI INTERVIEWER
+        </div>
+
+        <div class="result-subtitle">
+            Interview Performance Report
+        </div>
+
+    </div>
+
+
+
+    <!-- CANDIDATE -->
+
+    <div class="candidate-card">
+
+        <div class="candidate-icon">
+            👤
+        </div>
+
+        <div>
+
+            <h2 id="candidateName">
+                Candidate
+            </h2>
+
+            <p id="jobRole">
+                Selected Role
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- OVERALL SCORE -->
+
+    <div class="overall-card">
+
+        <div>
+
+            <div class="section-label">
+                OVERALL PERFORMANCE
+            </div>
+
+            <div
+                class="big-score"
+                id="overallScore">
+                0%
+            </div>
+
+            <p>
+                Combined AI evaluation
+            </p>
+
+        </div>
+
+
+        <div class="ai-evaluation">
+
+            <div class="evaluation-icon">
+                ✨
+            </div>
+
+            <div>
+
+                <h3>
+                    AI Evaluation
+                </h3>
+
+                <p>
+                    Score based on speech and NLP analysis.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RESULTS GRID -->
+
+    <div class="results-grid">
+
+
+        <!-- SPEECH -->
+
+        <div class="result-card">
+
+            <div class="card-heading">
+
+                <div class="card-icon">
+                    🎙️
+                </div>
+
+                <div>
+
+                    <h2>
+                        Speech Analysis
+                    </h2>
+
+                    <p>
+                        Voice performance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Speaking Duration
+                </span>
+
+                <strong id="duration">
+                    0 sec
+                </strong>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Word Count
+                </span>
+
+                <strong id="wordCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Speaking Speed
+                </span>
+
+                <strong id="speakingSpeed">
+                    0 WPM
+                </strong>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Filler Words
+                </span>
+
+                <strong id="fillerWords">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NLP -->
+
+        <div class="result-card">
+
+            <div class="card-heading">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <h2>
+                        NLP Analysis
+                    </h2>
+
+                    <p>
+                        Answer quality
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    NLP Score
+                </span>
+
+                <strong id="nlpScore">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Semantic Similarity
+                </span>
+
+                <strong id="semanticSimilarity">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Keyword Match
+                </span>
+
+                <strong id="keywordMatch">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span>
+                    Answer Quality
+                </span>
+
+                <strong id="answerQuality">
+                    Analyzing...
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TRANSCRIPT -->
+
+    <div class="transcript-card">
+
+        <div class="card-heading">
+
+            <div class="card-icon">
+                📝
+            </div>
+
+            <div>
+
+                <h2>
+                    Answer Transcript
+                </h2>
+
+                <p>
+                    Your response converted from speech to text
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="transcript-box"
+            id="transcript">
+
+            No transcript available.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- KEYWORDS -->
+
+    <div class="transcript-card">
+
+        <div class="card-heading">
+
+            <div class="card-icon">
+                🔑
+            </div>
+
+            <div>
+
+                <h2>
+                    Detected Keywords
+                </h2>
+
+                <p>
+                    Important terms detected in your answer
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="keywords-box"
+            id="keywords">
+
+            No keywords detected.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FEEDBACK -->
+
+    <div class="feedback-card">
+
+        <div class="section-label">
+            AI FEEDBACK
+        </div>
+
+        <h2 id="feedbackTitle">
+            Interview Analysis Complete
+        </h2>
+
+        <p id="feedbackText">
+            Your interview has been evaluated using
+            speech and natural language processing.
+        </p>
+
+    </div>
+
+
+
+    <!-- BUTTON -->
+
+    <button
+        class="restart-btn"
+        onclick="startNewInterview()">
+
+        🔄 Start New Interview
+
+    </button>
+
+
+</div>
+
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        console.log(
+            "===== RESULT PAGE ====="
+        );
+
+
+        // =====================================
+        // CANDIDATE DATA
+        // =====================================
+
+        const candidateName =
+            localStorage.getItem(
+                "candidateName"
+            ) || "Candidate";
+
+        const jobRole =
+            localStorage.getItem(
+                "jobRole"
+            ) || "Selected Role";
+
+
+        document.getElementById(
+            "candidateName"
+        ).textContent =
+            candidateName;
+
+
+        document.getElementById(
+            "jobRole"
+        ).textContent =
+            jobRole;
+
+
+
+        // =====================================
+        // SPEECH DATA
+        // =====================================
+
+        const duration =
+            parseFloat(
+                localStorage.getItem(
+                    "lastDuration"
+                )
+            ) || 0;
+
+        const wordCount =
+            parseInt(
+                localStorage.getItem(
+                    "wordCount"
+                )
+            ) || 0;
+
+        const speakingSpeed =
+            parseFloat(
+                localStorage.getItem(
+                    "speakingSpeed"
+                )
+            ) || 0;
+
+        const fillerWords =
+            parseInt(
+                localStorage.getItem(
+                    "fillerWords"
+                )
+            ) || 0;
+
+
+
+        // =====================================
+        // NLP DATA
+        // =====================================
+
+        const nlpScore =
+            parseFloat(
+                localStorage.getItem(
+                    "nlpScore"
+                )
+            ) || 0;
+
+        const semanticSimilarity =
+            parseFloat(
+                localStorage.getItem(
+                    "semanticSimilarity"
+                )
+            ) || 0;
+
+        const keywordMatch =
+            parseFloat(
+                localStorage.getItem(
+                    "keywordMatch"
+                )
+            ) || 0;
+
+        const answerQuality =
+            localStorage.getItem(
+                "answerQuality"
+            ) || "Analyzed";
+
+
+
+        // =====================================
+        // TRANSCRIPT
+        // =====================================
+
+        const transcript =
+            localStorage.getItem(
+                "lastTranscript"
+            ) || "";
+
+        const keywords =
+            localStorage.getItem(
+                "keywords"
+            ) || "";
+
+
+
+        // =====================================
+        // DISPLAY SPEECH
+        // =====================================
+
+        document.getElementById(
+            "duration"
+        ).textContent =
+            duration.toFixed(1) + " sec";
+
+
+        document.getElementById(
+            "wordCount"
+        ).textContent =
+            wordCount;
+
+
+        document.getElementById(
+            "speakingSpeed"
+        ).textContent =
+            Math.round(speakingSpeed) + " WPM";
+
+
+        document.getElementById(
+            "fillerWords"
+        ).textContent =
+            fillerWords;
+
+
+
+        // =====================================
+        // DISPLAY NLP
+        // =====================================
+
+        document.getElementById(
+            "nlpScore"
+        ).textContent =
+            nlpScore.toFixed(1) + "%";
+
+
+        document.getElementById(
+            "semanticSimilarity"
+        ).textContent =
+            semanticSimilarity.toFixed(1) + "%";
+
+
+        document.getElementById(
+            "keywordMatch"
+        ).textContent =
+            keywordMatch.toFixed(1) + "%";
+
+
+        document.getElementById(
+            "answerQuality"
+        ).textContent =
+            answerQuality;
+
+
+
+        // =====================================
+        // TRANSCRIPT
+        // =====================================
+
+        document.getElementById(
+            "transcript"
+        ).textContent =
+            transcript ||
+            "No transcript available.";
+
+
+
+        // =====================================
+        // KEYWORDS
+        // =====================================
+
+        document.getElementById(
+            "keywords"
+        ).textContent =
+            keywords ||
+            "No keywords detected.";
+
+
+
+        // =====================================
+        // OVERALL SCORE
+        // =====================================
+
+        let speechScore = 0;
+
+
+        // Speaking speed score
+        if (
+            speakingSpeed >= 100 &&
+            speakingSpeed <= 160
+        ) {
+
+            speechScore += 60;
+
+        } else if (
+            speakingSpeed >= 80 &&
+            speakingSpeed <= 180
+        ) {
+
+            speechScore += 45;
+
+        } else if (
+            speakingSpeed > 0
+        ) {
+
+            speechScore += 25;
+        }
+
+
+        // Filler word score
+        if (fillerWords === 0) {
+
+            speechScore += 40;
+
+        } else if (fillerWords <= 2) {
+
+            speechScore += 30;
+
+        } else if (fillerWords <= 5) {
+
+            speechScore += 20;
+
+        } else {
+
+            speechScore += 10;
+        }
+
+
+        const overallScore =
+            Math.round(
+                (nlpScore * 0.6) +
+                (speechScore * 0.4)
+            );
+
+
+        document.getElementById(
+            "overallScore"
+        ).textContent =
+            overallScore + "%";
+
+
+
+        // =====================================
+        // FEEDBACK
+        // =====================================
+
+        let feedback = "";
+
+
+        if (overallScore >= 80) {
+
+            feedback =
+                "Excellent performance! Your answer was relevant, clear and well structured.";
+
+        }
+
+        else if (overallScore >= 60) {
+
+            feedback =
+                "Good performance. Your answer was relevant, but you can improve clarity and confidence.";
+
+        }
+
+        else if (overallScore >= 40) {
+
+            feedback =
+                "Average performance. Try to give more detailed and structured answers.";
+
+        }
+
+        else {
+
+            feedback =
+                "Needs improvement. Focus on providing relevant details, speaking clearly and avoiding very short answers.";
+        }
+
+
+        document.getElementById(
+            "feedbackText"
+        ).textContent =
+            feedback;
+
+
+
+        // =====================================
+        // DEBUG
+        // =====================================
+
+        console.log(
+            "Duration:",
+            duration
+        );
+
+        console.log(
+            "Word Count:",
+            wordCount
+        );
+
+        console.log(
+            "Speaking Speed:",
+            speakingSpeed
+        );
+
+        console.log(
+            "Filler Words:",
+            fillerWords
+        );
+
+        console.log(
+            "NLP Score:",
+            nlpScore
+        );
+
+        console.log(
+            "Semantic Similarity:",
+            semanticSimilarity
+        );
+
+        console.log(
+            "Keyword Match:",
+            keywordMatch
+        );
+
+        console.log(
+            "Answer Quality:",
+            answerQuality
+        );
+
+        console.log(
+            "Transcript:",
+            transcript
+        );
+
+    }
+);
+
+
+
+// ==========================================
+// NEW INTERVIEW
+// ==========================================
+
+function startNewInterview() {
+
+    localStorage.clear();
+
+    window.location.href =
+        "index.html";
+}
+
+</script>
+
+</body>
+
+</html>
